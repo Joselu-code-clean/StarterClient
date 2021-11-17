@@ -5,13 +5,13 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix="retry")
 public class CircuitBreakerProperties {
 
-	private Byte retry = 0;
+	private Integer retry = 0;
 
-	public Byte getCounter() {
+	public Integer getCounter() {
 		return retry;
 	}
 
-	public void setCounter(Byte retry) {
+	public void setCounter(Integer retry) {
 		this.retry = retry;
 	}
 

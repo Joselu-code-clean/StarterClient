@@ -3,10 +3,10 @@ package com.example.StarterClient;
 public class CircuitBreaker {
 
 	private String status = "open";
-	private Byte retry = 0;
+	private Integer retry = 0;
 	
 	
-	public CircuitBreaker(String status, Byte retry) {
+	public CircuitBreaker(String status, int retry) {
 		super();
 		this.status = status;
 		this.retry = retry;
@@ -17,7 +17,7 @@ public class CircuitBreaker {
 			this.setStatus("close");
 			this.setRetry(retry++);
 		}else {
-			this.setStatus("open");
+			this.setStatus("half-open");
 			this.setRetry(retry++);
 		}
 		return this.getStatus();
@@ -31,11 +31,11 @@ public class CircuitBreaker {
 		this.status = status;
 	}
 
-	public Byte getRetry() {
+	public Integer getRetry() {
 		return retry;
 	}
 
-	public void setRetry(Byte retry) {
+	public void setRetry(Integer retry) {
 		this.retry = retry;
 	}
 	

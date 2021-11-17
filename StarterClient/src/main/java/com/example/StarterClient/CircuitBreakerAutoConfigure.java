@@ -14,7 +14,7 @@ public class CircuitBreakerAutoConfigure {
 	
 	@Bean
 	public CircuitBreaker saludo() {
-		System.out.println("Idioma: "+properties.getCounter());
+		System.out.println("Estados-Contador: "+ properties.getCounter() );
 		return new CircuitBreaker("open",properties.getCounter());
 	}
 	
