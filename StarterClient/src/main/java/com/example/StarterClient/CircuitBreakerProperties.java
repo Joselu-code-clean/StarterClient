@@ -2,17 +2,19 @@ package com.example.StarterClient;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties(prefix="retry")
+@ConfigurationProperties(prefix="circuitbreaker")
 public class CircuitBreakerProperties {
 
 	private Integer retry = 0;
 
-	public Integer getCounter() {
+	public Integer getRetry() {
 		return retry;
 	}
 
-	public void setCounter(Integer retry) {
+	public void setRetry(Integer retry) {
 		this.retry = retry;
 	}
+
+	
 
 }

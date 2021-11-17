@@ -10,12 +10,20 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties(CircuitBreakerProperties.class)
 public class CircuitBreakerAutoConfigure {
 
-	private final CircuitBreakerProperties properties = new CircuitBreakerProperties();
+	private final CircuitBreakerProperties properties;
 	
+	
+	
+	public CircuitBreakerAutoConfigure(CircuitBreakerProperties properties) {
+		super();
+		this.properties = properties;
+	}
+
+
 	@Bean
 	public CircuitBreaker saludo() {
-		System.out.println("Estados-Contador: "+ properties.getCounter() );
-		return new CircuitBreaker("open",properties.getCounter());
+		System.out.println("Estados-Contador: "+ properties.getRetry() );
+		return new CircuitBreaker("open", properties.getRetry());
 	}
 	
 }

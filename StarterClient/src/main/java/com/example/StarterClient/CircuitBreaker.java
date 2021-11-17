@@ -6,7 +6,7 @@ public class CircuitBreaker {
 	private Integer retry = 0;
 	
 	
-	public CircuitBreaker(String status, int retry) {
+	public CircuitBreaker(String status, Integer retry) {
 		super();
 		this.status = status;
 		this.retry = retry;
