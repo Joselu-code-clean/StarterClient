@@ -22,7 +22,7 @@ public class CircuitBreakerAutoConfigure {
 
 	@Bean
 	public CircuitBreaker saludo() {
-		System.out.println("Estados-Contador: "+ properties.getRetry() );
+		System.out.println("Estado-Actual-Propiedad-Retry: "+ properties.getRetry() );
 		return new CircuitBreaker("open", properties.getRetry());
 	}
 	

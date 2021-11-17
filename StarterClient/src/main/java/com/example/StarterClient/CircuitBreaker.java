@@ -13,7 +13,7 @@ public class CircuitBreaker {
 	}
 	
 	public String changeStatus() {
-		if(this.retry > 3) {
+		if(this.retry > 2) {
 			this.setStatus("close");
 			this.setRetry(retry++);
 		}else {
